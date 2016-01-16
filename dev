@@ -16,9 +16,8 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: ' &copy; ' + mapLink,maxZoom: 18}).addTo(map);
 
 
-var geojsonLayer = new L.GeoJSON.AJAX('borno.geojson',  {style:geojson});
+var geojsonLayer = new L.GeoJSON.AJAX('borno.geojson',{style:geojson});
 
-var myStyle = {"color": "#ff7800", "weight": 4, "opacity": 0.65};
 geojsonLayer.addTo(map);
 
 </script>
