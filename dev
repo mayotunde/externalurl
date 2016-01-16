@@ -8,17 +8,18 @@
 <body>
 <div id="map" style="width: 700px;height: 500px"></div>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
- <script src="borno.geojson" type="text/javascript"></script>
+<script src='https://raw.github.com/calvinmetcalf/leaflet-ajax/master/dist/leaflet.ajax.min.js'></script>
 <script>
 var map = L.map('map').setView([14.6, 2.9], 5);
 mapLink = '<a href="http://openstreetmap.org">openstreetmap</a>,'+'<a href="http://mapsnigeriainitiative.wordpress.com">mapsNI</a>';
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: ' &copy; ' + mapLink,maxZoom: 18}).addTo(map);
 
-var borno =
-L.geoJson(borno).addTo(map);
-});
 
+var geojsonLayer = new L.GeoJSON.AJAX('borno.geojson',  {style:geojson});
+
+var myStyle = {"color": "#ff7800", "weight": 4, "opacity": 0.65};
+geojsonLayer.addTo(map);
 
 </script>
 </body>
